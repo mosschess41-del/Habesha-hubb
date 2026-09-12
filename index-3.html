@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ሀበሻ Hub // Demo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><i class="fa-solid fa-fire"></i> ሀበሻ Hub</div>
+    <div class="header-note">Demo Mode</div>
+</header>
+
+<main id="pageHome" class="page-view active">
+    <nav>
+        <button class="nav-btn active" onclick="switchCategory('models', this)">
+            <i class="fa-solid fa-user-group"></i> Models <span class="count-badge">10</span>
+        </button>
+        <button class="nav-btn" onclick="switchCategory('groups', this)">
+            <i class="fa-solid fa-users"></i> Groups <span class="count-badge">10</span>
+        </button>
+        <button class="nav-btn" onclick="switchCategory('videos', this)">
+            <i class="fa-solid fa-play"></i> Videos
+        </button>
+        <button class="nav-btn" onclick="switchCategory('streams', this)">
+            <i class="fa-solid fa-headset"></i> Lives
+        </button>
+    </nav>
+
+    <div class="grid-container" id="contentGrid"></div>
+</main>
+
+<!-- Model / Group detail bottom sheet -->
+<div id="detailSheet" class="bottom-sheet"></div>
+
+<!-- Chat overlay -->
+<div id="chatOverlay" class="chat-overlay">
+    <div class="chat-overlay-header" id="chatOverlayHeader"></div>
+    <div class="chat-overlay-messages" id="chatOverlayMessages"></div>
+    <form class="chat-overlay-input" id="chatOverlayForm" onsubmit="sendChatMessage(event)">
+        <input type="text" id="chatOverlayInput" placeholder="Write a message..." autocomplete="off">
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
